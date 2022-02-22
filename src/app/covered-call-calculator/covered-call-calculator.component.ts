@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dividend-calculator',
-  templateUrl: './dividend-calculator.component.html',
-  styleUrls: ['./dividend-calculator.component.scss']
+  selector: 'app-covered-call-calculator',
+  templateUrl: './covered-call-calculator.component.html',
+  styleUrls: ['./covered-call-calculator.component.scss']
 })
-export class DividendCalculatorComponent implements OnInit {
+export class CoveredCallCalculatorComponent implements OnInit {
 
   constructor() { }
 

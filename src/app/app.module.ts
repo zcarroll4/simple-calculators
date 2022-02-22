@@ -5,14 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RetirementIncomeComponent } from './retirement-income/retirement-income.component';
-import { DividendCalculatorComponent } from './dividend-calculator/dividend-calculator.component';
+import { CoveredCallCalculatorComponent } from './covered-call-calculator/covered-call-calculator.component';
+import { MonthlyDividendCalculatorComponent } from './monthly-dividend-calculator/monthly-dividend-calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     RetirementIncomeComponent,
-    DividendCalculatorComponent
+    CoveredCallCalculatorComponent,
+    MonthlyDividendCalculatorComponent
   ],
   imports: [
     BrowserModule,
