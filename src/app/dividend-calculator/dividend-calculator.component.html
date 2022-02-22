@@ -1,0 +1,118 @@
+<div class="container bg-dark rounded p-2" style="min-height:491px;">
+    <h1>Monthly Covered Call ETFs</h1>
+    <div class="col-12 text-white">
+        <hr style="background:white; height:2px;" />
+        <h3 class="text-white">What Is A Covered Call ETF?</h3>
+        <p class="text-white">A Covered Call ETF is an ETF Managed by an Investment Firm, that writes Covered Call
+            Options
+            against either the underlying Index ETF or the specified Individual Stock.
+            This type of strategy is a bearish play, meaning they don’t believe their selected ETF or Stock will reach
+            their
+            Option Strike price. The underlying position can still go up, but as long as it
+            doesn’t reach their price they sold, they will win the position. All of these options have an selected
+            Expiration Date, meaning that they will all expire on that specified date. </p>
+        <hr style="background:white; height:2px;" />
+        <h3 class="text-white">What Are Some Examples Currently In The Industry?</h3>
+        <p class="text-white">One’s mentioned in the calculator above are a part of the Global X Fund Network. $QYLD,
+            $XYLD,
+            $RYLD, $QYLG, & $XYLG. Others not included in the calculator above are..
+            Invesco's S&P 500 Buy/Write ETF, $PBP. WisdomTree's S&P 500 Put/Write, $PUTW. Credit Suisse's Gold Covered
+            Call
+            ETF, $GLDI. There are many others available in the industry, be sure to do your
+            own research & let us know if there are any others that you come across that are intersting! 👍
+        </p>
+        <hr style="background:white; height:2px;" />
+        <h3 class="text-white">What’s The Covered Call Strategy For The Selected ETFs Above?</h3>
+        <p class="text-white text-left">
+        <ul style="margin:0px; line-height:1.5;">
+            <li>$QYLD - Index Covered Call Options against the Nasdaq 100 Index (100% Allocation).</li>
+            <li>$QYLG - Index Covered Call Options against the Nasdaq 100 Index / Nasdaq 100 Growth (50/50% Allocation).
+            </li>
+            <li>$XYLD - Index Covered Call Options against the S&P 500 Index (100% Allocation).</li>
+            <li>$XYLG - Index Covered Call Options against the S&P 500 Index / S&P 500 Growth (50/50% Allocation).</li>
+            <li>$RYLD - Index Covered Call Options against the Russell 2000 Index (100% Allocation).</li>
+        </ul>
+    </div>
+    <hr />
+    <h2>Covered Call ETF Income Calculator</h2>
+    <p>The form below contains Four Covered Call ETFs to select from ($QYLD, $QYLG, $XYLD, $XYLG, $RYLD). Once you have
+        selected the desired ETF, then select the hypothetical Investment Amount ($100 - $1,000,000).
+    </p>
+    <form style="font-size:1.5rem;" method="POST" class="form" id="calculator">
+        <hr style="background:white; height:2px;" />
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="form-group text-left">
+                    <label class="text-left text-white">ETF:</label>
+                    <select #selectedInvestment (change)="getIncome(investment.value,selectedInvestment.value)"
+                        name="ticker" class="form-control" required value="QYLD">
+                        <option value="QYLD" selected>$QYLD - 100% Covered Call</option>
+                        <option value="QYLG">$QYLG - 50% Covered Call / 50% Growth</option>
+                        <option value="XYLD">$XYLD - 100% Covered Call</option>
+                        <option value="XYLG">$XYLG - 50% Covered Call / 50% Growth</option>
+                        <option value="RYLD">$RYLD - 100% Covered Call</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="text-white text-left">Amount Invested:</label>
+                    <select #investment (change)="getIncome(investment.value,selectedInvestment.value)" name="amount"
+                        class="form-control" value="100" required>
+                        <option value="100" selected>$100</option>
+                        <option value="1000">$1,000</option>
+                        <option value="2000">$2,000</option>
+                        <option value="3000">$3,000</option>
+                        <option value="4000">$4,000</option>
+                        <option value="5000">$5,000</option>
+                        <option value="6000">$6,000</option>
+                        <option value="7000">$7,000</option>
+                        <option value="8000">$8,000</option>
+                        <option value="9000">$9,000</option>
+                        <option value="10000">$10,000</option>
+                        <option value="15000">$15,000</option>
+                        <option value="20000">$20,000</option>
+                        <option value="25000">$25,000</option>
+                        <option value="40000">$40,000</option>
+                        <option value="50000">$50,000</option>
+                        <option value="100000">$100,000</option>
+                        <option value="250000">$250,000</option>
+                        <option value="500000">$500,000</option>
+                        <option value="1000000">$1,000,000</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="form-group" id="income" style="display:block">
+                    <label class="text-white">Annual Income:</label>
+                    <input type="text" id="taxFreeIncome" class="form-control disabled"
+                        value="{{ income | currency:'USD' }}" readonly>
+
+                </div>
+                <div class="form-group" style="display:block">
+                    <label class="text-white">Monthly Income:</label>
+                    <input type="text" id="portfolioValue" class="form-control disabled"
+                        value="{{ income/12 | currency:'USD' }}" readonly>
+                </div>
+                <!-- <div class="form-group" style="display:block">
+                    <label class="text-white">Index:</label>
+                    <input type="text" class="form-control" value="NASDAQ 100" readonly>
+                </div> -->
+                <div class="form-group" style="display:block">
+                    <label class="text-white">Investment Yield <i style="font-size:1rem;">(Updated:
+                            2/22/2022)</i>:</label>
+                    <input type="text" id="portfolioValue" class="form-control disabled" value="{{investmentYield}}%"
+                        readonly>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <p style="font-size:10px; margin-top:10px; padding:5px;">*<em><u>DISCLAIMER:</u></em> THIS CALCULATOR WAS MADE
+            FOR
+            EDUCATIONAL PURPOSES ONLY. RESULTS MAY VARY DEPENDING ON MANY FACTORS. INCOME DISPLAYED IS BEFORE TAXES &
+            TRADING FEES FROM BROKERAGE.
+            THIS IS NOT INVESTING ADVICE. ALWAYS DO YOUR OWN RESEARCH BEFORE INVESTING. PLEASE VISIT <A
+                HREF="https://www.globalxetfs.com/" rel="nofollow">GLOBALXETFS.COM</A> FOR MORE INFORMATION
+            FOR THESE SELECTED MONTHLY PAYING COVERED CALL ETFS.
+        </p>
+    </form>
+
+</div>
