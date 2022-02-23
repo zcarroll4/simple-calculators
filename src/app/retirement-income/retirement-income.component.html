@@ -1,102 +1,103 @@
-<div class="container bg-dark rounded p-2" style="min-height:491px;">
-    <h1>Retirement Income Calculator</h1>
-    <hr />
-    <div class="row text-center">
-      <!--Left Col-->
-      <div class="col-md-6 col-sm-12">
-        <div class="row">
-          <div class="col-md-8 offset-md-2 col-12 text-center">
-            <form class="form">
-              <div class="row">
-                <div class="col text-center">
-                  <div class="form-group form-group-lg my-3">
-                    <label class="fs-4">Monthly Contributions:</label>
-                    <input #monthlyContributions
-                      (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
-                      type="tel" style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
-                      class="form-control input-lg text-center mt-1" name="monthlyContributions" id="monthlyContributions" value=""
-                      placeholder="" step="100" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="form-group form-group-lg">
-                    <label>Starting Age:</label>
-                    <input #startAge
-                      (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
-                      type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;" class="form-control text-center mt-1 input-lg"
-                      name="startAge" id="startAge" value="25" placeholder=""/>
-                    </div>
-                </div>
-  
-                <div class="col">
-                  <div class="form-group form-group-lg">
-                    <label>Retirement Age:</label>
-                    <input #retireAge
-                      (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
-                      type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;" class="form-control mt-1 text-center input-lg"
-                      name="retireAge" id="retireAge" value="65" placeholder="" />
-                  </div>
-                </div>
-              </div>
-  
-              <div class="row my-3">
-                <div class="col">
-                  <div class="form-group form-group-lg">
-                    <label>Avg. Return %:</label>
-                    <input #expReturn
-                      (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
-                      type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;" class="form-control mt-1 input-lg text-center"
-                      name="expReturn" id="expReturn" value="7" ng-click="clickFunction()"
-                      placeholder="" />
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-group form-group-lg">
-                    <label>Retirement Yield %:</label>
-                    <input #retirementYield
-                      (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
-                      type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;" class="form-control mt-1 text-center input-lg"
-                      name="expReturn" id="retirementYield" value="4" />
-                  </div>
-                </div>
-              </div>
-  
-            </form>
-          </div>
-        </div>
-      </div>
-      <!--Right Col-->
-      <div class="col-md-6 col-sm-12">
-        <div class="row">
-          <div class="col-md-8 offset-md-2 col-10 offset-1 text-center">
+<div class="container bg-black shawdow-lg rounded p-2" style="min-height:491px;">
+  <h1>Retirement Income Calculator</h1>
+  <hr />
+  <div class="row text-center">
+    <!--Left Col-->
+    <div class="col-md-6 col-sm-12">
+      <div class="row">
+        <div class="col-md-8 offset-md-2 col-12 text-center">
+          <form class="form">
             <div class="row">
-              <div class="col-xs-1-12 p-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h3 class="card-title">Portfolio Balance</h3>
-                    <p class="card-text">{{ balance | currency:'USD' }}</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-1-12 p-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h3 class="card-title">Retirement Income</h3>
-                    <p class="card-text">{{ income | currency:'USD' }}</p>
-                  </div>
+              <div class="col text-center">
+                <div class="form-group form-group-lg my-3">
+                  <label class="fs-4">Monthly Contributions:</label>
+                  <input #monthlyContributions
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="tel" style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
+                    class="form-control input-lg text-center mt-1" name="monthlyContributions" id="monthlyContributions"
+                    value="" placeholder="" step="100" />
                 </div>
               </div>
             </div>
-  
-          </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group form-group-lg">
+                  <label>Starting Age:</label>
+                  <input #startAge
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
+                    class="form-control text-center mt-1 input-lg" name="startAge" id="startAge" value="25"
+                    placeholder="" />
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group form-group-lg">
+                  <label>Retirement Age:</label>
+                  <input #retireAge
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
+                    class="form-control mt-1 text-center input-lg" name="retireAge" id="retireAge" value="65"
+                    placeholder="" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row my-3">
+              <div class="col">
+                <div class="form-group form-group-lg">
+                  <label>Avg. Return %:</label>
+                  <input #expReturn
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
+                    class="form-control mt-1 input-lg text-center" name="expReturn" id="expReturn" value="7"
+                    ng-click="clickFunction()" placeholder="" />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group form-group-lg">
+                  <label>Retirement Yield %:</label>
+                  <input #retirementYield
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
+                    class="form-control mt-1 text-center input-lg" name="expReturn" id="retirementYield" value="4" />
+                </div>
+              </div>
+            </div>
+
+          </form>
         </div>
       </div>
     </div>
-    <hr/>
-    <div class="row">
-<span class="col-12 text-center" style="font-size:12px;">*Disclaimer: Assumed investments are tax deferred. (Roth IRA, Roth 401k & Roth TSP). Fees or inflation are not included in calculation.*</span>
-</div>
+    <!--Right Col-->
+    <div class="col-md-6 col-sm-12">
+      <div class="row">
+        <div class="col-md-8 offset-md-2 col-10 offset-1 text-center">
+          <div class="row">
+            <div class="col-xs-1-12 p-4">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">Portfolio Balance</h3>
+                  <p class="card-text">{{ balance | currency:'USD' }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-1-12 p-4">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">Retirement Income</h3>
+                  <p class="card-text">{{ income | currency:'USD' }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <span class="col-12 text-center" style="font-size:12px;">*Disclaimer: Assumed investments are tax deferred. (Roth
+      IRA, Roth 401k & Roth TSP). Fees or inflation are not included in calculation.*</span>
+  </div>
