@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implemnts OnInit{
     ngOnInit(): void {
-  title = 'cashflow-dividends';
+  //title = 'cashflow-dividends';
   window.scrollTo(0, 0);
 }
 }
