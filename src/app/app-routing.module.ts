@@ -10,7 +10,10 @@ export const routes: Routes = [
   { path: 'Calculators/MonthlyDivdendIncome', component: CoveredCallCalculatorComponent },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'top'
+  })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
