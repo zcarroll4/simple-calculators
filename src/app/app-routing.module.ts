@@ -14,7 +14,7 @@ export const routes: Routes = [
   { path: 'Calculators/CoveredCallETFIncome', component: CoveredCallCalculatorComponent, data: { title: 'Covered Call ETF Income Calculator' } },
   { path: 'Calculators/MonthlyDividendIncome', component: MonthlyDividendCalculatorComponent, data: { title: 'Monthly Dividend Income Calculator' } },
   { path: 'DividendCalendar', component: DividendCalendarComponent, data: { title: 'Dividend Calendar' } },
-  { path: 'Intro', component: VideoIntroComponent, data: { title: 'Welcome!' } },
+  { path: 'i', component: VideoIntroComponent, data: { title: 'Welcome!' } },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
