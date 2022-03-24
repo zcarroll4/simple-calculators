@@ -5,11 +5,13 @@ import { RetirementIncomeComponent } from "./retirement-income/retirement-income
 import { CoveredCallCalculatorComponent } from './covered-call-calculator/covered-call-calculator.component';
 import { MonthlyDividendCalculatorComponent } from './monthly-dividend-calculator/monthly-dividend-calculator.component';
 import { DividendCalendarComponent } from './dividend-calendar/dividend-calendar.component';
+import { RetirementIncomePurchaseComponent } from './retirement-income-purchase/retirement-income-purchase.component';
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'Calculators/RetirementIncome', component: RetirementIncomeComponent, data: { title: 'Retirement Income' } },
+  { path: 'Products/RetirementIncome', component: RetirementIncomePurchaseComponent, data: { title: 'Purchase Retirement Income Calculator' } },
   { path: 'Calculators/CoveredCallETFIncome', component: CoveredCallCalculatorComponent, data: { title: 'Covered Call ETF Income Calculator' } },
-  { path: 'Calculators/MonthlyDivdendIncome', component: MonthlyDividendCalculatorComponent, data: { title: 'Monthly Dividend Income Calculator' } },
+  { path: 'Calculators/MonthlyDividendIncome', component: MonthlyDividendCalculatorComponent, data: { title: 'Monthly Dividend Income Calculator' } },
   { path: 'DividendCalendar', component: DividendCalendarComponent, data: { title: 'Dividend Calendar' } },
 ];
 @NgModule({
