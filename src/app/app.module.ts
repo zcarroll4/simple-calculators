@@ -9,6 +9,7 @@ import { CoveredCallCalculatorComponent } from './covered-call-calculator/covere
 import { MonthlyDividendCalculatorComponent } from './monthly-dividend-calculator/monthly-dividend-calculator.component';
 import { DividendCalendarComponent } from './dividend-calendar/dividend-calendar.component';
 import { RetirementIncomePurchaseComponent } from './retirement-income-purchase/retirement-income-purchase.component';
+import { VideoIntroComponent } from './video-intro/video-intro.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RetirementIncomePurchaseComponent } from './retirement-income-purchase/
     CoveredCallCalculatorComponent,
     MonthlyDividendCalculatorComponent,
     DividendCalendarComponent,
-    RetirementIncomePurchaseComponent
+    RetirementIncomePurchaseComponent,
+    VideoIntroComponent
   ],
   imports: [
     BrowserModule,
