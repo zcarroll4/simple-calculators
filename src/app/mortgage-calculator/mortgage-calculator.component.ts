@@ -22,20 +22,18 @@ export class MortgageCalculatorComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log("hello");
-    // this.processKeyup("100000", "0", "3");
+    this.processKeyup("100,000", "0", "6.00");
   }
 
-    processKeyup(purchasePrice ?: String, downPayment?: String, interestRate?: String) {
+  processKeyup(purchasePrice?: String, downPayment?: String, interestRate?: String) {
     if (purchasePrice != '' && downPayment != '' && interestRate != '') {
-      console.log('has-value');
       var loanAmount = Number(purchasePrice?.replace(',', '')) - Number(downPayment?.replace(',', ''));
-      this.mortgagePayment = (loanAmount * ((Number(interestRate?.replace(',', '')) / 100)) / 12) * (1 + ((Number(interestRate?.replace(',', '')) / 100) / 12) ^ 30) / (1 + ((Number(interestRate?.replace(',', '')) / 100)/12)^12);
-      console.log(Math.round(this.mortgagePayment*100)/100);
-    } else {
-      console.log('missing values')
+      var newInterestRatePerMonth = (Number(interestRate) / 100) / 12;
+      this.mortgagePayment = loanAmount * newInterestRatePerMonth;
+      this.mortgagePayment = this.mortgagePayment * (Math.pow((1 + newInterestRatePerMonth), 360));
+      this.mortgagePayment = this.mortgagePayment / (Math.pow((1 + newInterestRatePerMonth), 360) - 1);
     }
-    }
+  }
   
   
   calculateValues(): number {

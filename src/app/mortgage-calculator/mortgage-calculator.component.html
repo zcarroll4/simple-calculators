@@ -27,7 +27,7 @@
                                     (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)"
                                     type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
                                     class="form-control text-center mt-1 input-lg" name="startAge" id="startAge"
-                                    value="5000" placeholder="" />
+                                    value="0" placeholder="" />
                             </div>
                         </div>
 
@@ -37,8 +37,8 @@
                                 <input #interestRate
                                     (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)"
                                     type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
-                                    class="form-control mt-1 text-center input-lg" name="retireAge" id="retireAge"
-                                    value="3" placeholder="" />
+                                    class="form-control mt-1 text-center input-lg" name="retireAge" value="6.00"
+                                    placeholder="" />
                             </div>
                         </div>
 
@@ -59,16 +59,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="col-xs-1-12 p-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="card-title">Retirement Income</h3>
-                                    <p class="card-text">{{ income | currency:'USD' }}</p>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
-
                 </div>
             </div>
         </div>
