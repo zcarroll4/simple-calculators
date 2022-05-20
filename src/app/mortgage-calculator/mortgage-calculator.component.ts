@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MortgageCalculatorComponent implements OnInit {
 
-  interestRate = 0.00;
+  newInterestRate = "0.00";
+  closingCosts  = "0.00";
+  newPurchasePrice = "0.00";
+  newDownPayment = "0.00";
+
   duration = 0;
-  closingCosts = 0.00;
-  purchasePrice = 0.00;
-  downPayment = 0.00;
+
   loanAmount = 0.00;
   pmi = 0.00;
   propertyTaxes = 0.00;
@@ -22,16 +24,29 @@ export class MortgageCalculatorComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.processKeyup("100,000", "0", "6.00");
+    // this.processKeyup("100,000", "0", "6.00");
   }
 
-  processKeyup(purchasePrice?: String, downPayment?: String, interestRate?: String) {
+  processKeyup(purchasePrice: string = "", downPayment: string = "", interestRate: string = "") {
+      this.newPurchasePrice = purchasePrice;
+    this.newDownPayment = downPayment;
+    if (Number(interestRate) > 0) {
+      this.newInterestRate = (Number(interestRate) / 100).toString();
+      interestRate = (Number(interestRate) / 100).toString();
+    } else {
+      this.newInterestRate = interestRate;
+    }
     if (purchasePrice != '' && downPayment != '' && interestRate != '') {
-      var loanAmount = Number(purchasePrice?.replace(',', '')) - Number(downPayment?.replace(',', ''));
-      var newInterestRatePerMonth = (Number(interestRate) / 100) / 12;
+      var loanAmount = Number(purchasePrice?.replace("$", '').replace(",", '')) - Number(downPayment?.replace("$", '').replace(",", ''));
+      var newInterestRatePerMonth = (Number(interestRate?.replace('%', ''))) / 12;
       this.mortgagePayment = loanAmount * newInterestRatePerMonth;
       this.mortgagePayment = this.mortgagePayment * (Math.pow((1 + newInterestRatePerMonth), 360));
       this.mortgagePayment = this.mortgagePayment / (Math.pow((1 + newInterestRatePerMonth), 360) - 1);
+
+
+    // if (Number(purchasePrice?.replace(',', '')) !== this.loanAmount) {
+    //   this.loanAmount = Number(purchasePrice?.replace(',', '')) - Number(downPayment?.replace(',', ''));      
+    // }
     }
   }
   

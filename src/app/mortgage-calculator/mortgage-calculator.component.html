@@ -11,35 +11,32 @@
                             <div class="col text-center">
                                 <div class="form-group form-group-lg my-3">
                                     <label class="form-label">Purchase Price:</label>
-                                    <input #purchasePrice
-                                        (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)"
-                                        type="tel"
+                                    <input #purchasePrice type="tel"
                                         style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
-                                        class="form-control input-lg text-center mt-1" name="monthlyContributions"
-                                        id="monthlyContributions" value="100,000" placeholder="" step="100" />
+                                        class="form-control input-lg text-center mt-1"
+                                        value="{{ newPurchasePrice | currency:'USD' }}" placeholder="" />
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group form-group-lg">
                                 <label class="form-label">Down Payment:</label>
-                                <input #downPayment
-                                    (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)"
-                                    type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
-                                    class="form-control text-center mt-1 input-lg" name="startAge" id="startAge"
-                                    value="0" placeholder="" />
+                                <input #downPayment type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
+                                    class="form-control text-center mt-1 input-lg"
+                                    value="{{ newDownPayment | currency:'USD' }}" placeholder="" />
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="form-group form-group-lg">
                                 <label class="form-label">Interest Rate:</label>
-                                <input #interestRate
-                                    (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)"
-                                    type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
-                                    class="form-control mt-1 text-center input-lg" name="retireAge" value="6.00"
-                                    placeholder="" />
+                                <input #interestRate type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
+                                    class="form-control mt-1 text-center input-lg" placeholder=""
+                                    value="{{newInterestRate |  percent:'1.2-3'}}" />
                             </div>
+
+                            <button type="button" class="btn btn-success btn-lg mt-4 fs-4"
+                                (click)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)">Calculate</button>
                         </div>
 
                     </form>
