@@ -1,0 +1,81 @@
+<div class="container bg-black shawdow-lg rounded p-2" style="min-height:491px;">
+    <h1>Mortgage Payment Calculator</h1>
+    <hr />
+    <div class="row text-center">
+        <!--Left Col-->
+        <div class="col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 col-12 text-center">
+                    <form class="form">
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="form-group form-group-lg my-3">
+                                    <label class="form-label">Purchase Price:</label>
+                                    <input #purchasePrice
+                                        (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)"
+                                        type="tel"
+                                        style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
+                                        class="form-control input-lg text-center mt-1" name="monthlyContributions"
+                                        id="monthlyContributions" value="100,000" placeholder="" step="100" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group form-group-lg">
+                                <label class="form-label">Down Payment:</label>
+                                <input #downPayment
+                                    (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)"
+                                    type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
+                                    class="form-control text-center mt-1 input-lg" name="startAge" id="startAge"
+                                    value="5000" placeholder="" />
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group form-group-lg">
+                                <label class="form-label">Interest Rate:</label>
+                                <input #interestRate
+                                    (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)"
+                                    type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
+                                    class="form-control mt-1 text-center input-lg" name="retireAge" id="retireAge"
+                                    value="3" placeholder="" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Right Col-->
+        <div class="col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 col-10 offset-1 text-center">
+                    <div class="row">
+                        <div class="col-xs-1-12 p-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Mortgage Payment</h3>
+                                    <p class="card-text">{{ mortgagePayment | currency:'USD' }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xs-1-12 p-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Retirement Income</h3>
+                                    <p class="card-text">{{ income | currency:'USD' }}</p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <span class="col-12 text-center" style="font-size:12px;">*Disclaimer: Assumed investments are tax deferred.
+            (Roth
+            IRA, Roth 401k & Roth TSP). Fees or inflation are not included in calculation.*</span>
+    </div>

@@ -7,12 +7,14 @@ import { MonthlyDividendCalculatorComponent } from './monthly-dividend-calculato
 import { DividendCalendarComponent } from './dividend-calendar/dividend-calendar.component';
 import { RetirementIncomePurchaseComponent } from './retirement-income-purchase/retirement-income-purchase.component';
 import { VideoIntroComponent } from './video-intro/video-intro.component';
+import { MortgageCalculatorComponent } from './mortgage-calculator/mortgage-calculator.component';
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'Calculators/RetirementIncome', component: RetirementIncomeComponent, data: { title: 'Retirement Income' } },
   { path: 'Products/RetirementIncome', component: RetirementIncomePurchaseComponent, data: { title: 'Purchase Retirement Income Calculator' } },
   { path: 'Calculators/CoveredCallETFIncome', component: CoveredCallCalculatorComponent, data: { title: 'Covered Call ETF Income Calculator' } },
   { path: 'Calculators/MonthlyDividendIncome', component: MonthlyDividendCalculatorComponent, data: { title: 'Monthly Dividend Income Calculator' } },
+  { path: 'Calculators/MortgagePayment', component: MortgageCalculatorComponent, data: { title: 'Mortgage Payment Calculator' } },
   { path: 'DividendCalendar', component: DividendCalendarComponent, data: { title: 'Dividend Calendar' } },
   { path: 'i', component: VideoIntroComponent, data: { title: 'Welcome!' } },
 ];
