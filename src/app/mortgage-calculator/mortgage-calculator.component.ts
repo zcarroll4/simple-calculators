@@ -20,6 +20,7 @@ export class MortgageCalculatorComponent implements OnInit {
   hoa = 0.00;
   
   mortgagePayment = 0.00
+  showClearResultsBtn: boolean = false;
 
   constructor() { }
 
@@ -42,11 +43,7 @@ export class MortgageCalculatorComponent implements OnInit {
       this.mortgagePayment = loanAmount * newInterestRatePerMonth;
       this.mortgagePayment = this.mortgagePayment * (Math.pow((1 + newInterestRatePerMonth), 360));
       this.mortgagePayment = this.mortgagePayment / (Math.pow((1 + newInterestRatePerMonth), 360) - 1);
-
-
-    // if (Number(purchasePrice?.replace(',', '')) !== this.loanAmount) {
-    //   this.loanAmount = Number(purchasePrice?.replace(',', '')) - Number(downPayment?.replace(',', ''));      
-    // }
+      this.showClearResultsBtn = true;
     }
   }
   

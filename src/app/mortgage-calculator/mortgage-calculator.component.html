@@ -14,7 +14,7 @@
                                     <input #purchasePrice type="tel"
                                         style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
                                         class="form-control input-lg text-center mt-1"
-                                        value="{{ newPurchasePrice | currency:'USD' }}" placeholder="" />
+                                        (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)" />
                                 </div>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                                 <label class="form-label">Down Payment:</label>
                                 <input #downPayment type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
                                     class="form-control text-center mt-1 input-lg"
-                                    value="{{ newDownPayment | currency:'USD' }}" placeholder="" />
+                                    (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)" />
                             </div>
                         </div>
 
@@ -31,12 +31,13 @@
                             <div class="form-group form-group-lg">
                                 <label class="form-label">Interest Rate:</label>
                                 <input #interestRate type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
-                                    class="form-control mt-1 text-center input-lg" placeholder=""
-                                    value="{{newInterestRate |  percent:'1.2-3'}}" />
+                                    class="form-control mt-1 text-center input-lg"
+                                    (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)" />
                             </div>
 
-                            <button type="button" class="btn btn-success btn-lg mt-4 fs-4"
-                                (click)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)">Calculate</button>
+                            <!-- <button type="button" class="btn btn-success w-100 btn-lg mt-4 fs-4"
+                                (click)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)">Calculate</button> -->
+
                         </div>
 
                     </form>
