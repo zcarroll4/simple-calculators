@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col text-center">
                                 <div class="form-group form-group-lg my-3">
-                                    <label class="form-label">Purchase Price:</label>
+                                    <label class="form-label fs-4">Purchase Price:</label>
                                     <input #purchasePrice type="tel"
                                         style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
                                         class="form-control input-lg text-center mt-1"
@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group form-group-lg">
-                                <label class="form-label">Down Payment:</label>
+                                <label class="form-label fs-4">Down Payment:</label>
                                 <!-- <input #downPayment type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
                                     class="form-control text-center mt-1 input-lg"
                                     (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)" /> -->
@@ -46,7 +46,7 @@
 
                         <div class="col-12">
                             <div class="form-group form-group-lg">
-                                <label class="form-label">Interest Rate:</label>
+                                <label class="form-label fs-4">Interest Rate:</label>
                                 <!-- <input #interestRate type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
                                     class="form-control mt-1 text-center input-lg"
                                     (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)" /> -->
@@ -86,7 +86,7 @@
                         <div class="col-xs-1-12 p-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="card-title">Mortgage Payment</h3>
+                                    <h3 class="card-title fs-3">Mortgage Payment</h3>
                                     <p class="card-text">{{ mortgagePayment | currency:'USD' }}</p>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                         <div class="col-xs-1-12 p-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="card-title">Down Payment</h3>
+                                    <h3 class="card-title  fs-3">Down Payment</h3>
                                     <p class="card-text">{{ downPaymentTotal | currency:'USD' }}</p>
                                 </div>
                             </div>
