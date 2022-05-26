@@ -20,8 +20,8 @@ export class CoveredCallCalculatorComponent implements OnInit {
   ryldYield = 10.61;
 
   ngOnInit(): void {
-    this.investmentYield = this.qyldYield;
-    this.getIncome('100', 'QYLD');
+    // this.investmentYield = this.qyldYield;
+    // this.getIncome('100', 'QYLD');
   }
 
   getIncome(investment: string, selectedInvestment: string) {

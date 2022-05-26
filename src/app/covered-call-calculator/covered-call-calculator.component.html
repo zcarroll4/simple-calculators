@@ -1,5 +1,5 @@
 <div class="container bg-black shawdow-lg p-2" style="min-height:491px;">
-    <h1>Monthly Covered Call ETFs</h1>
+    <!-- <h1>Monthly Covered Call ETFs</h1>
     <div class="text-white">
         <hr style="background:white; height:2px;" />
         <h3 class="text-white">What Is A Covered Call ETF?</h3>
@@ -33,10 +33,11 @@
             <li>$RYLD - Index Covered Call Options against the Russell 2000 Index (100% Allocation).</li>
         </ul>
     </div>
-    <hr />
+    <hr /> -->
     <h2>Covered Call ETF Income Calculator</h2>
     <p>The form below contains Four Covered Call ETFs to select from ($QYLD, $QYLG, $XYLD, $XYLG, $RYLD). Once you have
-        selected the desired ETF, then select the hypothetical Investment Amount ($100 - $1,000,000).
+        selected the desired ETF, then select the hypothetical Investment Amount ($100 - $1,000,000). Yields may be
+        outdated, please visit <a href="https://www.globalxetfs.com/">Global X</a> for an updated yield amount.
     </p>
     <form style="font-size:1.5rem;" method="POST" class="form" style="font-size:1.7rem;" id="calculator">
         <hr style="background:white; height:2px;" />
@@ -46,7 +47,8 @@
                     <label class="text-left text-white">ETF:</label>
                     <select #selectedInvestment (change)="getIncome(investment.value,selectedInvestment.value)"
                         name="ticker" class="form-control" required value="QYLD">
-                        <option value="QYLD" selected>$QYLD - 100% Covered Call</option>
+                        <option></option>
+                        <option value="QYLD">$QYLD - 100% Covered Call</option>
                         <option value="QYLG">$QYLG - 50% Covered Call / 50% Growth</option>
                         <option value="XYLD">$XYLD - 100% Covered Call</option>
                         <option value="XYLG">$XYLG - 50% Covered Call / 50% Growth</option>
@@ -57,7 +59,8 @@
                     <label class="text-white text-left">Amount Invested:</label>
                     <select #investment (change)="getIncome(investment.value,selectedInvestment.value)" name="amount"
                         class="form-control" value="100" required>
-                        <option value="100" selected>$100</option>
+                        <option value="0"></option>
+                        <option value="100">$100</option>
                         <option value="1000">$1,000</option>
                         <option value="2000">$2,000</option>
                         <option value="3000">$3,000</option>
@@ -97,8 +100,7 @@
                     <input type="text" class="form-control" value="NASDAQ 100" readonly>
                 </div> -->
                 <div class="form-group" style="display:block">
-                    <label class="text-white">Investment Yield <i style="font-size:1rem;">(Updated:
-                            2/22/2022)</i>:</label>
+                    <label class="text-white">Investment Yield <i style="font-size:1rem;"></i>:</label>
                     <input type="text" id="portfolioValue" class="form-control disabled" value="{{investmentYield}}%"
                         readonly>
                 </div>
