@@ -15,35 +15,10 @@
                                         style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
                                         class="form-control input-lg text-center mt-1"
                                         value="{{ purchasePrice.value | currency:'USD' }}"
-                                        (change)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)">
+                                        (change)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value, closingCosts.value)">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="form-group form-group-lg">
-                                <label class="form-label fs-4">Down Payment:</label>
-                                <!-- <input #downPayment type="tel" style="width: 75%; margin: auto; margin-bottom: 5px;"
-                                    class="form-control text-center mt-1 input-lg"
-                                    (keyup)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)" /> -->
-
-                                <select #downPayment style="width: 75%; margin: auto; margin-bottom: 5px;"
-                                    class="form-select text-center mt-1 input-lg"
-                                    (change)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)">
-                                    <option></option>
-                                    <option value=".03">3.00%</option>
-                                    <option value=".04">4.00%</option>
-                                    <option value=".05">5.00%</option>
-                                    <option value=".06">6.00%</option>
-                                    <option value=".07">7.00%</option>
-                                    <option value=".08">8.00%</option>
-                                    <option value=".09">9.00%</option>
-                                    <option value=".10">10.00%</option>
-                                    <option value=".15">15.00%</option>
-                                    <option value=".20">20.00%</option>
-                                </select>
-                            </div>
-                        </div>
-
                         <div class="col-12">
                             <div class="form-group form-group-lg">
                                 <label class="form-label fs-4">Interest Rate:</label>
@@ -53,7 +28,7 @@
 
                                 <select #interestRate style="width: 75%; margin: auto; margin-bottom: 5px;"
                                     class="form-select text-center mt-1 input-lg"
-                                    (change)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)">
+                                    (change)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value, closingCosts.value)">
                                     <option></option>
                                     <option value=".03">3.00%</option>
                                     <option value=".0325">3.25%</option>
@@ -73,7 +48,41 @@
                                 (click)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value)">Calculate</button> -->
 
                         </div>
-
+                        <div class="col-12">
+                            <div class="form-group form-group-lg">
+                                <label class="form-label fs-4">Down Payment:</label>
+                                <select #downPayment style="width: 75%; margin: auto; margin-bottom: 5px;"
+                                    class="form-select text-center mt-1 input-lg"
+                                    (change)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value, closingCosts.value)">
+                                    <option></option>
+                                    <option value=".03">3.00%</option>
+                                    <option value=".04">4.00%</option>
+                                    <option value=".05">5.00%</option>
+                                    <option value=".06">6.00%</option>
+                                    <option value=".07">7.00%</option>
+                                    <option value=".08">8.00%</option>
+                                    <option value=".09">9.00%</option>
+                                    <option value=".10">10.00%</option>
+                                    <option value=".15">15.00%</option>
+                                    <option value=".20">20.00%</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group form-group-lg">
+                                <label class="form-label fs-4">Closing Costs:</label>
+                                <select #closingCosts style="width: 75%; margin: auto; margin-bottom: 5px;"
+                                    class="form-select text-center mt-1 input-lg"
+                                    (change)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value, closingCosts.value)">
+                                    <option></option>
+                                    <option value=".01">1.00%</option>
+                                    <option value=".02">2.00%</option>
+                                    <option value=".03">3.00%</option>
+                                    <option value=".04">4.00%</option>
+                                    <option value=".05">5.00%</option>
+                                </select>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -87,6 +96,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title fs-3">Mortgage Payment</h3>
+                                    <h6 class="text-dark">(Not Included - Taxes/Insurance)</h6>
                                     <p class="card-text">{{ mortgagePayment | currency:'USD' }}</p>
                                 </div>
                             </div>
@@ -100,8 +110,9 @@
                         <div class="col-xs-1-12 p-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="card-title  fs-3">Down Payment</h3>
-                                    <p class="card-text">{{ downPaymentTotal | currency:'USD' }}</p>
+                                    <h3 class="card-title fs-3">Total Costs</h3>
+                                    <h6 class="text-dark">(Down Payment + Closing Costs)</h6>
+                                    <p class="card-text">{{ downPaymentTotal + closingCostsTotal | currency:'USD' }}</p>
                                 </div>
                             </div>
                         </div>

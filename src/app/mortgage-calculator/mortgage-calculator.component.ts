@@ -21,6 +21,7 @@ export class MortgageCalculatorComponent implements OnInit {
   
   mortgagePayment = 0.00
   downPaymentTotal = 0.00
+  closingCostsTotal = 0.00;
   showClearResultsBtn: boolean = false;
 
   constructor() { }
@@ -29,7 +30,7 @@ export class MortgageCalculatorComponent implements OnInit {
     // this.processKeyup("100,000", "0", "6.00");
   }
 
-  processKeyup(purchasePrice: string = "", downPayment: string = "", interestRate: string = "")
+  processKeyup(purchasePrice: string = "", downPayment: string = "", interestRate: string = "", closingCosts: string = "")
   {
       this.newPurchasePrice = purchasePrice;
     this.newDownPayment = downPayment;
@@ -41,13 +42,15 @@ export class MortgageCalculatorComponent implements OnInit {
     }
     if (purchasePrice != '' && downPayment != '' && interestRate != '') {
       let nPurchasePrice = Number(purchasePrice?.replace("$", '').replace(",", ''));
-      var loanAmount =  nPurchasePrice - (nPurchasePrice) * Number(downPayment?.replace("$", '').replace(",", ''));
+      let tClosingCosts = nPurchasePrice * Number(closingCosts);
+      var loanAmount =  nPurchasePrice - (nPurchasePrice) * Number(downPayment?.replace("$", '').replace(",", '')) + tClosingCosts;
       var newInterestRatePerMonth = (Number(interestRate?.replace('%', ''))) / 12;
       this.mortgagePayment = loanAmount * newInterestRatePerMonth;
       this.mortgagePayment = this.mortgagePayment * (Math.pow((1 + newInterestRatePerMonth), 360));
       this.mortgagePayment = this.mortgagePayment / (Math.pow((1 + newInterestRatePerMonth), 360) - 1);
       this.showClearResultsBtn = true;
       this.downPaymentTotal = nPurchasePrice * Number(downPayment);
+      this.closingCostsTotal = tClosingCosts;
     }
   }
   
