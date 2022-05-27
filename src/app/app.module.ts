@@ -11,6 +11,7 @@ import { DividendCalendarComponent } from './dividend-calendar/dividend-calendar
 import { RetirementIncomePurchaseComponent } from './retirement-income-purchase/retirement-income-purchase.component';
 import { VideoIntroComponent } from './video-intro/video-intro.component';
 import { MortgageCalculatorComponent } from './mortgage-calculator/mortgage-calculator.component';
+import { PortfolioIncomeCalculatorComponent } from './portfolio-income-calculator/portfolio-income-calculator.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MortgageCalculatorComponent } from './mortgage-calculator/mortgage-calc
     DividendCalendarComponent,
     RetirementIncomePurchaseComponent,
     VideoIntroComponent,
-    MortgageCalculatorComponent
+    MortgageCalculatorComponent,
+    PortfolioIncomeCalculatorComponent
   ],
   imports: [
     BrowserModule,
