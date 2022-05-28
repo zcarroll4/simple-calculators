@@ -60,11 +60,11 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">Portfolio Income</h3>
-                                    <p class="card-text">{{ portfolioIncome | currency:'USD' }}</p>
+                                    <p class="card-text" *ngIf="portfolioIncome > 0">
+                                        {{ portfolioIncome | currency:'USD':'symbol':'1.0' }}
+                                    </p>
                                 </div>
                             </div>
-                            {{portfolioBalance.value}}
-                            {{incomeYield.value}}
                         </div>
                     </div>
                     <div class="row">
@@ -72,7 +72,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">Monthly Income:</h3>
-                                    <p class="card-text">{{ portfolioIncome/12 | currency:'USD' }}</p>
+                                    <p class="card-text" *ngIf="portfolioIncome > 0">
+                                        {{ portfolioIncome/12 | currency:'USD':'symbol':'1.0' }}
+                                    </p>
                                 </div>
                             </div>
                         </div>

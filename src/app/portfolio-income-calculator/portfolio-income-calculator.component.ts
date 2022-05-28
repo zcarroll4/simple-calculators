@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioIncomeCalculatorComponent implements OnInit {
 portfolioIncome = 0.00;
-  incomeYield = 0.00;
-  constructor() { }
+incomeYield = 0.00;
+constructor() { }
 
   ngOnInit(): void {
     // this.processKeyup("500000", ".04");
