@@ -14,7 +14,7 @@
                                     <input #portfolioBalance name="portfolioBalance" type="tel"
                                         style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
                                         class="form-control input-lg text-center mt-1"
-                                        value="{{ portfolioBalance.value | currency:'USD' }}"
+                                        value="{{ portfolioBalance.value | currency:'USD':'symbol':'3.0'}}"
                                         (change)="processKeyup(portfolioBalance.value, incomeYield.value)">
                                 </div>
                             </div>
@@ -63,6 +63,8 @@
                                     <p class="card-text">{{ portfolioIncome | currency:'USD' }}</p>
                                 </div>
                             </div>
+                            {{portfolioBalance.value}}
+                            {{incomeYield.value}}
                         </div>
                     </div>
                     <div class="row">

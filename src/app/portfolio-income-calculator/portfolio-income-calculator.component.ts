@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioIncomeCalculatorComponent implements OnInit {
 portfolioIncome = 0.00;
-
+  incomeYield = 0.00;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,9 +18,8 @@ portfolioIncome = 0.00;
     processKeyup(portfolio: string = "", incomeYield: string = "",)
     {
       if (portfolio !== "" && incomeYield !== ""){
-      let portfolioB = Number(portfolio.replace("$", '').replace(",", ''));
-      let portfolioY = Number(incomeYield);
-      this.portfolioIncome = portfolioB * portfolioY;
+      let portfolioB = portfolio.replace("$", "").replace(",","");
+      this.portfolioIncome = Number(portfolioB) * Number(incomeYield);
     }
     }
 }
