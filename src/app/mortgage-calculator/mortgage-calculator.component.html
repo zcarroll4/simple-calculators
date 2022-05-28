@@ -14,7 +14,7 @@
                                     <input #purchasePrice type="tel"
                                         style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
                                         class="form-control input-lg text-center mt-1"
-                                        value="{{ purchasePrice.value | currency:'USD' }}"
+                                        value="{{ purchasePrice.value | currency:'USD' :'symbol':'1.0' }}"
                                         (change)="processKeyup(purchasePrice.value, downPayment.value, interestRate.value, closingCosts.value)">
                                 </div>
                             </div>

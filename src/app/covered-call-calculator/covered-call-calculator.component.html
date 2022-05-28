@@ -42,7 +42,7 @@
     <form style="font-size:1.5rem;" method="POST" class="form" style="font-size:1.7rem;" id="calculator">
         <hr style="background:white; height:2px;" />
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 p-3">
                 <div class="form-group text-left">
                     <label class="text-left text-white">ETF:</label>
                     <select #selectedInvestment (change)="getIncome(investment.value,selectedInvestment.value)"
@@ -83,7 +83,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 p-3">
                 <div class="form-group" id="income" style="display:block">
                     <label class="text-white">Annual Income:</label>
                     <input type="text" id="taxFreeIncome" class="form-control disabled"
