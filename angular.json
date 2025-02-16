@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cashflow-dividends": {
+    "simple-calculators": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cashflow-dividends",
+            "outputPath": "dist/simple-calculators",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "cashflow-dividends:build:production"
+              "buildTarget": "simple-calculators:build:production"
             },
             "development": {
-              "buildTarget": "cashflow-dividends:build:development"
+              "buildTarget": "simple-calculators:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "cashflow-dividends:build"
+            "buildTarget": "simple-calculators:build"
           }
         },
         "test": {

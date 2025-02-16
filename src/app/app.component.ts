@@ -11,6 +11,6 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 })
 export class AppComponent {
-  title = 'cashflow-dividends';
+  title = 'simple-calculators';
 
 }
