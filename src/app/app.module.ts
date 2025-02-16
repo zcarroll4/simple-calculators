@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RetirementIncomeComponent } from './retirement-income/retirement-income.component';
 import { CoveredCallCalculatorComponent } from './covered-call-calculator/covered-call-calculator.component';
-import { MonthlyDividendCalculatorComponent } from './monthly-dividend-calculator/monthly-dividend-calculator.component';
 import { DividendCalendarComponent } from './dividend-calendar/dividend-calendar.component';
 import { RetirementIncomePurchaseComponent } from './retirement-income-purchase/retirement-income-purchase.component';
 import { VideoIntroComponent } from './video-intro/video-intro.component';
@@ -19,7 +18,6 @@ import { PortfolioIncomeCalculatorComponent } from './portfolio-income-calculato
     HomePageComponent,
     RetirementIncomeComponent,
     CoveredCallCalculatorComponent,
-    MonthlyDividendCalculatorComponent,
     DividendCalendarComponent,
     RetirementIncomePurchaseComponent,
     VideoIntroComponent,
