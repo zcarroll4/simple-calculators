@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-covered-call-calculator',
   templateUrl: './covered-call-calculator.component.html',
-  styleUrls: ['./covered-call-calculator.component.scss']
+  styleUrls: ['./covered-call-calculator.component.scss'],
+  standalone: false
 })
 export class CoveredCallCalculatorComponent implements OnInit {
 

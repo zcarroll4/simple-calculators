@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-portfolio-income-calculator',
   templateUrl: './portfolio-income-calculator.component.html',
-  styleUrls: ['./portfolio-income-calculator.component.scss']
+  styleUrls: ['./portfolio-income-calculator.component.scss'],
+  standalone: false
+
 })
 export class PortfolioIncomeCalculatorComponent implements OnInit {
 portfolioIncome = 0.00;

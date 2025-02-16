@@ -4,7 +4,9 @@ import { Retire } from './retire';
 @Component({
   selector: 'app-retirement-income',
   templateUrl: './retirement-income.component.html',
-  styleUrls: ['./retirement-income.component.scss']
+  styleUrls: ['./retirement-income.component.scss'],
+  standalone: false
+
 })
 export class RetirementIncomeComponent implements OnInit {
 
